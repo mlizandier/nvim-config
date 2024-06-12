@@ -10,3 +10,5 @@ require('plugins')
 require('misc.lualine')
 -- Colorscheme
 require('colorscheme.gruvbox')
+-- telescope
+require('telescope_config')

@@ -10,6 +10,10 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(
   function(use)
     use 'wbthomason/packer.nvim'
+    use {
+      'nvim-telescope/telescope.nvim', tag = '0.1.x',
+      requires = { {'nvim-lua/plenary.nvim'} }
+    }
 
     use {
       "hrsh7th/nvim-cmp",
