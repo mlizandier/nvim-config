@@ -15,6 +15,8 @@ packer.startup(
       requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    use 'neovim/nvim-lspconfig'
+    use 'hrsh7th/cmp-nvim-lsp'
     use {
       "hrsh7th/nvim-cmp",
       requires = {
@@ -28,15 +30,24 @@ packer.startup(
         'hrsh7th/cmp-emoji'
       }
     }
-    use 'onsails/lspkind.nvim'
+    -- Snippets
+    use 'L3MON4D3/LuaSnip'             -- Snippet engine
+    use 'saadparwaiz1/cmp_luasnip'     -- Snippets source for nvim-cmp
 
-    use "rebelot/kanagawa.nvim"
+    -- Optional: Additional completion sources
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use {
+      "jose-elias-alvarez/null-ls.nvim",
+      requires = { "nvim-lua/plenary.nvim" }
+    }
+    use 'MunifTanjim/prettier.nvim'
+    -- Misc
+    use 'onsails/lspkind.nvim'
     use {
       'nvim-treesitter/nvim-treesitter',
       run = ':TSUpdate'
     }
-    use 'neovim/nvim-lspconfig'
-    use 'ellisonleao/gruvbox.nvim'
     use {
       "nvim-neo-tree/neo-tree.nvim",
       branch = "v3.x",
@@ -53,13 +64,13 @@ packer.startup(
     }
 
     use 'mg979/vim-visual-multi' -- multi-cursors
+
+    -- Colorschemes
+    use "rebelot/kanagawa.nvim"
+    use 'ellisonleao/gruvbox.nvim'
   end
 )
 
--- Lsp config setup
-require('lsp_config')
-require('tree_sitter')
-require('cmp_config')
 -- Neo-tree setup
 require("neo-tree").setup({
   close_if_last_window = true, -- Close Neo-tree if it is the last window open

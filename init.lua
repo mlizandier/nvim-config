@@ -7,6 +7,10 @@ vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 
 require('plugins')
+-- Lsp config setup
+require('lsp_config')
+require('tree_sitter')
+require('cmp_config')
 require('misc.lualine')
 -- Colorscheme
 require('colorscheme.gruvbox')
