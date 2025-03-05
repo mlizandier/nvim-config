@@ -3,5 +3,5 @@ return {
   version = "*",
   opts = {
     direction = 'float'
-   }
   }
+}
